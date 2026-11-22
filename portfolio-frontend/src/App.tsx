@@ -431,10 +431,10 @@ function App() {
                       {image && (
                         <img
                           src={
-                            image.startsWith('/uploads/')
-                              ? `http://localhost:5000${image}`
-                              : image
-                          }
+  image.startsWith('/uploads/')
+    ? `${API.replace(/\/api\/?$/, '')}${image}`
+    : image
+}
                           alt={getTitle(project, 'Project')}
                           className="h-48 w-full object-cover"
                         />
